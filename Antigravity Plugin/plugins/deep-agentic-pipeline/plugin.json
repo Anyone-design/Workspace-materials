@@ -1,0 +1,14 @@
+{
+  "name": "deep-agentic-pipeline",
+  "version": "2.0.0",
+  "description": "Enterprise-grade multi-agent software development pipeline featuring deterministic state machine orchestration, airlocked quality gates, world-class industry personas, contract-first decoupling, zero-mock reality stress audits, and Day-1 diagnostic runbooks.",
+  "author": "Antigravity Architecture Core",
+  "keywords": [
+    "multi-agent",
+    "agentic-workflow",
+    "code-generation",
+    "decoupled-architecture",
+    "chaos-engineering",
+    "sre"
+  ]
+}

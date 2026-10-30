@@ -1,0 +1,23 @@
+{
+  "hooks": {
+    "preToolExecution": [
+      {
+        "matcher": { "tool": "run_command", "commandPrefix": "git add ." },
+        "action": "block",
+        "reason": "Violation of AP-003 (Zero Blind Mass Staging). Use surgical, file-specific staging: 'git add <file1> <file2>'."
+      },
+      {
+        "matcher": { "tool": "run_command", "commandPrefix": "git add -A" },
+        "action": "block",
+        "reason": "Violation of AP-003 (Zero Blind Mass Staging). Use surgical, file-specific staging: 'git add <file1> <file2>'."
+      }
+    ],
+    "postToolExecution": [
+      {
+        "matcher": { "tool": "run_command", "commandContains": "test" },
+        "action": "logAudit",
+        "targetDir": ".pipeline/session-active/reviews/"
+      }
+    ]
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "version": "1.0.0",
+  "projectName": "ExampleApp",
+  "entities": {
+    "Item": {
+      "type": "object",
+      "required": ["id", "title", "status", "createdAt"],
+      "properties": {
+        "id": { "type": "string", "format": "uuid" },
+        "title": { "type": "string", "minLength": 1, "maxLength": 120 },
+        "status": { "type": "string", "enum": ["pending", "active", "completed"] },
+        "createdAt": { "type": "string", "format": "date-time" }
+      }
+    }
+  },
+  "endpoints": [
+    {
+      "name": "getItems",
+      "method": "GET",
+      "path": "/api/items",
+      "queryParams": {
+        "limit": { "type": "integer", "default": 20, "maximum": 100 }
+      },
+      "responses": {
+        "200": {
+          "type": "array",
+          "items": { "$ref": "#/entities/Item" }
+        }
+      },
+      "mockFixtures": [
+        {
+          "id": "c1f7a0b2-4d8e-4a6f-8a1e-1234567890ab",
+          "title": "First Sample Entity",
+          "status": "active",
+          "createdAt": "2026-10-27T10:00:00Z"
+        },
+        {
+          "id": "e2a8b1c3-5e9f-4b7a-9b2f-0987654321ba",
+          "title": "Second Sample Entity",
+          "status": "pending",
+          "createdAt": "2026-10-27T11:30:00Z"
+        }
+      ]
+    },
+    {
+      "name": "createItem",
+      "method": "POST",
+      "path": "/api/items",
+      "requestBody": {
+        "required": ["title"],
+        "properties": {
+          "title": { "type": "string", "minLength": 1, "maxLength": 120 }
+        }
+      },
+      "responses": {
+        "201": { "$ref": "#/entities/Item" },
+        "400": {
+          "type": "object",
+          "properties": {
+            "error": { "type": "string" },
+            "code": { "type": "string" }
+          }
+        }
+      }
+    }
+  ]
+}
