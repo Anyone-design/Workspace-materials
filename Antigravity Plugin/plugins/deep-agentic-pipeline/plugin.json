@@ -1,0 +1,24 @@
+{
+  "$schema": "https://antigravity.google/schemas/v1/plugin.json",
+  "name": "deep-agentic-pipeline",
+  "displayName": "Deep Agentic Pipeline",
+  "version": "2.1.0",
+  "logo": "assets/logo.svg",
+  "description": "Enterprise multi-agent software engineering pipeline: Socratic intake, contract decoupling, high-craft Generative UI prototyping, zero-mock chaos testing, and SRE runbooks.",
+  "author": "Antigravity Architecture Core",
+  "suggestedPrompts": [
+    "Run Stage 1 Intake for my new project idea",
+    "Generate an interactive HTML/Tailwind prototype for my UI",
+    "Run Stage 5 Zero-Mock Chaos Reality Audit on this codebase"
+  ],
+  "keywords": [
+    "multi-agent",
+    "agentic-workflow",
+    "nextjs",
+    "code-generation",
+    "high-craft-ui",
+    "decoupled-architecture",
+    "chaos-engineering",
+    "sre"
+  ]
+}
